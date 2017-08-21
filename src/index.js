@@ -10,14 +10,14 @@ module.exports = function(files, options) {
         plugins: ['es_modules'],
         defs: [],
         name: files,
+        options: {spans: true},
     }, options)
     
     var origins = glob.sync(files)
     
     var defs = ['ecmascript'].map((name) => (
         JSON.parse(fs.readFileSync(require.resolve(`tern/defs/${name}.json`), 'utf8'))
-    ))
-    .concat(options.defs)
+    )).concat(options.defs)
     
     var plugins = {};
     options.plugins.forEach((name) => {
@@ -37,7 +37,7 @@ module.exports = function(files, options) {
     server.flush(function(err) {
         if (err) throw err
         
-        var code = condense.condense(origins, options.name, {spans: true})
+        var code = condense.condense(origins, options.name, options.options)
         stream.write(JSON.stringify(code, null, 2))
         stream.end()
     })
