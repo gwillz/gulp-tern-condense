@@ -1,0 +1,24 @@
+{
+    "env": {
+        "browser": false,
+        "commonjs": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+        "indent": [
+            "warn",
+            4
+        ],
+        "quotes": [
+            "warn",
+            "single"
+        ],
+        "no-console": "off",
+        "no-unused-vars": "warn"
+    },
+    "parserOptions": {
+        "sourceType": "module"
+    }
+}

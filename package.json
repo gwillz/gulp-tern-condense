@@ -4,19 +4,22 @@
   "description": "Tern condense as a vinyl/gulp plugin",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint src/*.js"
   },
   "repository": {
     "type": "git",
     "url": "https://git.mk2es.com.au/gwillz/gulp-tern-condense"
   },
   "keywords": [
-    "gulpplugin"
+    "gulp-plugin"
   ],
   "author": "Gwilyn Saunders",
   "license": "MIT",
   "dependencies": {
     "tern": "^0.21.0",
     "through2": "^2.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.5.0"
   }
 }
