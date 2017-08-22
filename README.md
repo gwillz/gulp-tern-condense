@@ -1,12 +1,9 @@
-Gulp Tern condense
+Gulp Tern Condense
 ==================
-
 This is a plugin to create tern type-def index files
-
 
 Usage
 -----
-
 ```js
 var condense = require('gulp-tern-condense')
 var source   = require('vinyl-source-stream')
@@ -26,9 +23,7 @@ gulp.task('condense', function() {
 })
 ```
 
-
 ### Condense Options
-
-- spans: bool - include line number range for code scopes
-- server: alternate TernServer instance
-- sortOutput: bool - output sorting
+- `spans`: bool - include line number range for code scopes
+- `server`: alternate TernServer instance
+- `sortOutput`: bool - output sorting
