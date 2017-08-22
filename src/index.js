@@ -11,7 +11,7 @@ module.exports = function(options) {
     options = Object.assign({
         plugins: ['es_modules'],
         defs: [],
-        name: options.files[0],
+        name: files[0],
         options: {spans: true},
     }, options)
     
@@ -22,9 +22,12 @@ module.exports = function(options) {
     var defs = ['ecmascript']
     .concat(options.defs)
     .filter((v, i, self) => !self.slice(0, i).includes(i))
-    .map(name => (
-        JSON.parse(fs.readFileSync(require.resolve(`tern/defs/${name}.json`), 'utf8'))
-    ))
+    .map(name => {
+        try {
+            return JSON.parse(fs.readFileSync(require.resolve(`tern/defs/${name}.json`), 'utf8'))
+        } catch (e) {}
+        return JSON.parse(fs.readFileSync(name), 'utf8')
+    })
     
     var plugins = {};
     options.plugins.forEach(name => {

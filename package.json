@@ -1,6 +1,6 @@
 {
   "name": "gulp-tern-condense",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tern condense as a vinyl/gulp plugin",
   "main": "src/index.js",
   "scripts": {
